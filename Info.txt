@@ -1,0 +1,5 @@
+Copyright: Yama Ghulam Farooq. 2013.
+All rights reserved.
+@author Yama Ghulam Farooq (yama.farooq@gmail.com)
+
+I'm Hungry  is an application for smartphones and tablets which will help users to find a nice restaurant based on their location, the application is based on HTML5, CSS3, Google Place API
