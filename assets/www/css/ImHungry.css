@@ -1,0 +1,36 @@
+#manifest h2 {
+    margin-top: 0px;
+    margin-bottom: 0.2em;
+    text-overflow: ellipsis;
+    white-space: no-wrap;
+    overflow: hidden
+}
+
+#manifest .description {
+    line-height: 1;
+    font-size: 13px;
+}
+
+#manifest li {
+    position: relative;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    height: 6em;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(255,255,255,0.5);
+}
+#manifest .publicationDate {
+    line-height: 2;
+    font-size: 9px;
+}
+.line {
+	border-top-width:1px;
+	border-top-style:solid;
+	border-top-color:rgba(255,255,255,0.5);
+}
+.ui-grid-b {
+	border-bottom-width:1px;
+	border-bottom-style:solid;
+	border-bottom-color:rgba(255,255,255,0.5);
+}
