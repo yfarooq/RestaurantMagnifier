@@ -16,9 +16,13 @@ var Longitude;
 
 var onSuccess = function(position) {
   console.log("GeoLoc OnSuccess called");
-  Latitude = position.coords.latitude;
-  Longitude = position.coords.longitude;
-//  alert(Latitude);
+  //Latitude = position.coords.latitude;
+  //Longitude = position.coords.longitude;
+  //TODO: need to change it to proper location
+  Latitude = 51.2345787;
+  Longitude = -0.5768667;
+	  
+alert(Latitude);
   initialize(Latitude,Longitude);
 };
 
@@ -32,7 +36,9 @@ var onError = function() {
 var map;
 var infowindow;
 
-function initialize(Latitude,Longitude) {
+function initialize() {
+	  Latitude = 51.2345787;
+	  Longitude = -0.5768667;
   var pyrmont = new google.maps.LatLng(Latitude,Longitude);
 
   map = new google.maps.Map(document.getElementById('map'), {
@@ -54,7 +60,7 @@ function initialize(Latitude,Longitude) {
 function callback(results, status) {
   console.log("--------------------------------------------------------------------------------------");
   console.log("Reslt is : "+JSON.stringify(results));
-  addContant(results);
+ // addContant(results);
 
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
