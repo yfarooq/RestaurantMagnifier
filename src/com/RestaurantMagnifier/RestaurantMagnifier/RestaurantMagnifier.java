@@ -17,12 +17,12 @@
        under the License.
  */
 
-package com.imhungry.ImHungry;
+package com.RestaurantMagnifier.RestaurantMagnifier;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
 
-public class ImHungry extends DroidGap
+public class RestaurantMagnifier extends DroidGap
 {
     @Override
     public void onCreate(Bundle savedInstanceState)

@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.imhungry.ImHungry;
+package com.RestaurantMagnifier.RestaurantMagnifier;
 
 public final class R {
     public static final class attr {
