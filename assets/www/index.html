@@ -14,28 +14,29 @@ All rights reserved.
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
-		<style>
-		      #map {
-		        height: 600px;
-		        width: 400px;
-		        border: 1px solid #333;
-		        margin-top: 0.6em;
-		      }
-		</style>
 		<script type="text/javascript" src="css/RestaurantMagnifier.css"></script>
+		
 		<!-- Loading JavaScript Files --> 
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&libraries=places"></script>
 		<script type="text/javascript" src="js/RestaurantMagnifier.js"></script>
+		<script type="text/javascript" src="js/LaunchMonitor.js"></script>
+		<script type="text/javascript" src="js/Log.js"></script>
+		<script type="text/javascript" src="js/DebugTools.js"></script>
+		<script type="text/javascript" src="js/DataSchema.js"></script>
+		<script type="text/javascript" src="js/DataStructures.js"></script>
+		<script type="text/javascript" src="js/Database.js"></script>
+		<script type="text/javascript" src="js/PersistenceManager.js"></script>
+		
 		<!-- Cordova -->
         <script type="text/javascript" src="cordova-2.6.0.js"></script>
         <script type="text/javascript">
+        	console.log("onLoad started, registering for deviceready...");
         	document.addEventListener("deviceready", onDeviceReady, false);
-        	function onDeviceReady() {
-        	  initialize();
-        	}
+        	console.log("onLoad complete");
         </script>
+        
     </head>
-    <body id="deviceready">
+    <body id="onLoad">
 		<!-- Home -->
 		<div data-role="home_pg" id="Home">
 		    <div data-theme="a" data-role="header">
@@ -44,11 +45,8 @@ All rights reserved.
 		        </h3>
 		    </div>
 		    <div data-role="content">
-		           <div id="map"></div>
-		 <ul id="manifest">
-          <!-- Map content injected here -->
-        </ul>
-
+		    	<div id="map-canvas" style="width: 50%; float:left"></div>
+        	</div>
 		    <div data-theme="a" data-role="footer" data-position="fixed">
 		        <h3>
 		           &reg; Yama Ghulam Farooq 2013. All Rights reserved.
