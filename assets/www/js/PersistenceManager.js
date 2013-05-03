@@ -54,46 +54,15 @@ function buildPersistenceManager() {
   */
 
   // Bundles representing each of the object types
-  var configBundle = {
-      table : "config",
-      keyColumns : ["name"],
-      otherColumns : ["textValue", "integerValue", "floatValue", "dateValue"]
-  };
 
-  var broadcastBundle = {
-      table : "broadcast",
+  var RestaurantBundle = {
+      table : "Restaurant",
       keyColumns : ["id"],
       otherColumns : ["distributionTime", "validFrom", "validTo", "title", "summary",
                       "broadcast", "broadcastIcon", "broadcastType",
                       "parts", "partsDownloaded", "partsUnpacked", "partsStitched",    // Download and assembly count
                       "downloaded", "unpacked", "stitched",                            // Completion flags
                       "opened", "removed", "favourite", "notified"]                    // Usage flags
-  };
-
-  var attachmentBundle = {
-      table : "attachment",
-      keyColumns : ["id"],
-      otherColumns : ["broadcastId", "name", "usage", "mimeType", "URL",
-                      "parts", "partsDownloaded", "partsUnpacked", "partsStitched",    // Download and assembly count
-                      "downloaded", "unpacked", "stitched"]                            // Completion flags
-  };
-
-  var uiBundle = {
-      table : "ui",
-      keyColumns : ["id"],
-      otherColumns : ["distributionTime", "validFrom", "validTo", "themeName",
-                      "backgroundColour", "overlayColour1", "overlayColour2", "overlayColour3", "overlayColour4",
-                      "separatorColour", "enabledTextColour", "disabledTextColour",
-                      "parts", "partsDownloaded", "partsUnpacked", "partsStitched",     // Download and assembly count
-                      "downloaded", "unpacked", "stitched"]                             // Completion flags
-  };
-
-  var pluginBundle = {
-      table : "plugin",
-      keyColumns : ["id"],
-      otherColumns : ["name", "plugin",
-                      "parts", "partsDownloaded", "partsUnpacked", "partsStitched",     // Download and assembly count
-                      "downloaded", "unpacked", "stitched"]                             // Completion flags
   };
 
   var cacheLocallyBundle = {
@@ -106,27 +75,9 @@ function buildPersistenceManager() {
                       "downloaded", "unpacked", "stitched"]                             // Completion flags
   };
 
-  var iconBundle = {
-      table : "icon",
-      keyColumns : ["ownerId", "key"],
-      otherColumns : ["cacheKey", "URI", "path", "downloaded", "unpacked"]
-  };
-
-  var bannerBundle = {
-      table : "banner",
-      keyColumns : ["ownerId", "key"],
-      otherColumns : ["cacheKey", "URI", "path", "downloaded", "unpacked"]
-  };
-
   // Add the new bundle in here
-  var bundles = [broadcastBundle,
-                 uiBundle,
-                 pluginBundle,
-                 cacheLocallyBundle,
-                 attachmentBundle,
-                 configBundle,
-                 iconBundle,
-                 bannerBundle];
+  var bundles = [RestaurantBundle,
+                 cacheLocallyBundle];
 
   /**
    * Get all the common names from the source object and build a value array for all the named fields.
@@ -312,7 +263,6 @@ function buildPersistenceManager() {
                 error.SQL = bundle.queryExistsSQL;
                 getSafeErrorCallback(errorCallback)(error);
               });
-
         });
 
   }

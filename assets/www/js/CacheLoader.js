@@ -55,17 +55,17 @@ function loadCacheFromDatabase(completionCallback) {
   }
 
   function loadRestaurant() {
-    log("Requesting broadcasts");
+    log("Requesting Restaurant");
 
-    // Load broadcasts
+    // Load Restaurant
     APP.persistence.Restaurant.getAll(function(resultsArray){
       log("Loading broadcasts into cache, found " + resultsArray.length + " row(s)");
       for (var i = 0; i < resultsArray.length; i++) {
-        var broadcast = new APP.types.Broadcast();
+        var Restaurant= new APP.types.Broadcast();
         var row = resultsArray[i];
-        copyFields("broadcast", row, broadcast);
-        APP.cache.broadcast.autoPut(broadcast);
-        log("Loaded broadcast: " + broadcast.id);
+        copyFields("broadcast", row, Restaurant);
+        APP.cache.Restaurant.autoPut(Restaurant);
+        log("Loaded Restaurant: " + Restaurant.id);
       }
       loadedTypes.Restaurant = true;
       typeLoadComplete();
